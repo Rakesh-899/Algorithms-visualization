@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="cache-control" content="public">
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Sorting Visualiser</title>
+	<script src="lib/p5.min.js"></script>
+	<script src="src/sketch.js"></script>
+	<script src="src/algorithms/quickSort.js"></script>
+	<script src="src/algorithms/bubbleSort.js"></script>
+	<script src="src/algorithms/selectionSort.js"></script>
+	<script src="src/algorithms/mergeSort.js"></script>
+	<script src="src/algorithms/insertionSort.js"></script>
+	<script src="src/algorithms/radixSort.js"></script>
+	<script src="src/dummySort.js"></script>
+	<script src="src/utils.js"></script>
+	<link rel="stylesheet" type="text/css" href="src/style.css" />
+	<link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
+	<link href="https://fonts.googleapis.com/css2?family=Overpass:wght@100&display=swap" rel="stylesheet">
+</head>
+
+<body>
+	<h1 id="heading">Sorting Visualiser</h1>
+	<div id="controls" class="controls">
+		<label for="numRectangles">Count:&nbsp;</label>
+		<input type="range" id="numRectangles" min="10" max="150" value="30" />
+
+		<div class="slider-container">
+			<label for="speedSlider">Speed:&nbsp;</label>
+			<input type="range" id="speedSlider" min="1" max="60" value="50" />
+		</div>
+
+		<button id="startButton" onclick="startVisualization('insertion')">Insertion Sort</button>
+		<button id="startButton" onclick="startVisualization('selection')">Selection Sort</button>
+		<button id="startButton" onclick="startVisualization('bubble')">Bubble Sort</button>
+		<button id="startButton" onclick="startVisualization('merge')">Merge Sort</button>
+		<button id="startButton" onclick="startVisualization('quick')">Quick Sort</button>
+		<button id="startButton" onclick="startVisualization('radix')">Radix Sort</button>
+		<button id="resetButton">Reset</button>
+	</div>
+</body>
+
+</html>
