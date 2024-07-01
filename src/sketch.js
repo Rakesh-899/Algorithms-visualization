@@ -90,21 +90,19 @@ function enableButtons () {
 function createSortingInstance (algorithm, values) {
   switch (algorithm) {
     case 'insertion':
-      {return new InsertionSort(values);}
+      return new InsertionSort(values);
     case 'selection':
-      {return new SelectionSort(values);}
+      return new SelectionSort(values);
     case 'bubble':
-      {return new BubbleSort(values);}
+      return new BubbleSort(values);
     case 'merge':
-      {return new MergeSort(values);}
+      return new MergeSort(values);
     case 'quick':
-      {return new QuickSort(values);}
+      return new QuickSort(values);
     case 'radix':
-      {return new RadixSort(values);}
+      return new RadixSort(values);
     case 'Binarysearch':
-      {
-        return new binarySearch(values);
-      }
+      return new binarySearch(values);
     default:
       return new DummySort(values);
   }
