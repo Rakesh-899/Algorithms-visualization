@@ -5,7 +5,7 @@
 	<meta http-equiv="cache-control" content="public">
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Sorting Visualiser</title>
+	<title>Algorithms Visualiser</title>
 	<script src="lib/p5.min.js"></script>
 	<script src="src/sketch.js"></script>
 	<script src="src/algorithms/quickSort.js"></script>
@@ -14,6 +14,7 @@
 	<script src="src/algorithms/mergeSort.js"></script>
 	<script src="src/algorithms/insertionSort.js"></script>
 	<script src="src/algorithms/radixSort.js"></script>
+	<script src="src/algorithms/binarySearch.js"></script>
 	<script src="src/dummySort.js"></script>
 	<script src="src/utils.js"></script>
 	<link rel="stylesheet" type="text/css" href="src/style.css" />
@@ -22,16 +23,16 @@
 </head>
 
 <body>
-	<h1 id="heading">Sorting Visualiser</h1>
+	<h1 id="heading">Algorithms Visualiser</h1>
 	<div id="controls" class="controls">
 		<label for="numRectangles">Count:&nbsp;</label>
-		<input type="range" id="numRectangles" min="10" max="150" value="30" />
+		<input type="range" id="numRectangles" min="10" max="550" value="30" />
 
 		<div class="slider-container">
 			<label for="speedSlider">Speed:&nbsp;</label>
 			<input type="range" id="speedSlider" min="1" max="60" value="50" />
 		</div>
-
+		<button id="startButton" onclick="startVisualization('Binarysearch')">Binary Search</button>
 		<button id="startButton" onclick="startVisualization('insertion')">Insertion Sort</button>
 		<button id="startButton" onclick="startVisualization('selection')">Selection Sort</button>
 		<button id="startButton" onclick="startVisualization('bubble')">Bubble Sort</button>
@@ -40,6 +41,7 @@
 		<button id="startButton" onclick="startVisualization('radix')">Radix Sort</button>
 		<button id="resetButton">Reset</button>
 	</div>
+
 </body>
 
 </html>
