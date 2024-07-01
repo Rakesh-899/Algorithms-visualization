@@ -22,12 +22,14 @@ class binarySearch {
             this.colors[right]=color(185, 107, 47);
             // await sleep(220-speed);
             this.colors[mid]=color(0, 192, 203);
+            let m=mid;
             await sleep(1220-speed);
             let l=left;
             let r=right;
             if (this.values[mid]===target) {
-                this.colors[mid]=color(255, 255, 0);;//black ;
-                return mid; // Target found at index mid
+                this.colors[mid]=color(255, 255, 0);//black ;
+                // return mid; // Target found at index mid
+                break;
             } else if (this.values[mid]<target) {
                 left=mid+1; // Search the right half
                 this.colors[left]=color(255, 0, 0);
@@ -35,16 +37,17 @@ class binarySearch {
                 right=mid-1; // Search the left half
                 this.colors[right]=color(255, 0, 0);
             }
+            this.colors[m]=color(255);
             this.colors[l]=color(255); // light green
             // await sleep(220-speed);
             this.colors[r]=color(255); // light green
             await sleep(220-speed);
         }
         this.markVisited();
-
+        this.colors[left]=color(255, 255, 0);//black ;
     }
     markVisited () {
-        this.colors=new Array(this.values.length).fill(color(144, 238, 144));
+        this.colors=new Array(this.values.length).fill(color(255, 255, 255));
     }
     draw (rectWidth) {
         for (let i=0; i<this.values.length; i++) {
