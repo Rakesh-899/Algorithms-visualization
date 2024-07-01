@@ -103,6 +103,8 @@ function createSortingInstance (algorithm, values) {
       return new RadixSort(values);
     case 'Binarysearch':
       return new binarySearch(values);
+    case 'linearsearch':
+      return new LinearSearch(values);
     default:
       return new DummySort(values);
   }

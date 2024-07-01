@@ -33,9 +33,11 @@ class binarySearch {
             } else if (this.values[mid]<target) {
                 left=mid+1; // Search the right half
                 this.colors[left]=color(255, 0, 0);
+                await sleep(1220-speed);
             } else {
                 right=mid-1; // Search the left half
                 this.colors[right]=color(255, 0, 0);
+                await sleep(1220-speed);
             }
             this.colors[m]=color(255);
             this.colors[l]=color(255); // light green
