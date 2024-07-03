@@ -230,7 +230,7 @@ button[disabled] {
 }
 
 .TreeVisulizer {
-  background-color: rgb(98, 252, 240);
+  background-color: #6c757db8;
   border: 2px solid pink;
   border-radius: 10px;
 }
@@ -296,7 +296,7 @@ button[disabled] {
 }
 
 main {
-  background-color: rgb(165, 183, 182);
+  background-color: #6c757db8;
   border: 2px solid pink;
   border-radius: 10px;
 }
