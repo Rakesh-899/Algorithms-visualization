@@ -187,8 +187,8 @@ button[disabled] {
 
 .link {
   fill: none;
-  stroke: #eeb334;
-  stroke-width: 3px;
+  stroke:#ccc;
+  stroke-width: 2px;
 }
 
 .visited {
