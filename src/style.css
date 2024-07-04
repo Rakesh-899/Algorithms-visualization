@@ -299,6 +299,11 @@ main {
   background-color: #6c757db8;
   border: 2px solid pink;
   border-radius: 10px;
+  width: 100%;
+  /* margin-top: -2px; */
+  border-top: #6c757db8;
+  border-top-left-radius: 0px;
+  border-top-right-radius:0px ;
 }
 
 /* Styles for the graph container */
