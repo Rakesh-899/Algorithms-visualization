@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    let width=550;
+    let width=450;
     const height=650;
 
     // Check screen width and adjust dimensions for smaller screens

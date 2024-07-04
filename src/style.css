@@ -122,7 +122,7 @@ button[disabled] {
 
 /* Styles for the Run DFS button */
 #run-dfs,
-#run-bfs {
+#run-bfs,#run-dfs-btn,#run-bfs-btn {
   position: absolute;
   /* top: -60px; */
   /* Adjust top position */
@@ -142,21 +142,21 @@ button[disabled] {
 
 /* Hover effect for the button */
 #run-dfs:hover,
-#run-bfs:hover {
+#run-bfs:hover,#run-dfs-btn:hover,#run-bfs-btn:hover {
   background-color: white;
   color: black;
 }
 
 /* Focus effect for accessibility */
 #run-dfs:focus,
-#run-bfs:focus {
+#run-bfs:focus,#run-dfs-btn:focus,#run-bfs-btn:focus {
   outline: none;
   box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
 }
 
 /* Disabled style for the button */
 #run-dfs:disabled,
-#run-bfs:disabled {
+#run-bfs:disabled,#run-dfs-btn:disabled,#run-bfs-btn:disabled {
   background-color: #6c757d;
   cursor: not-allowed;
 }
@@ -236,7 +236,7 @@ button[disabled] {
 }
 
 /* Styling for the track and thumb of the range input */
-#speed-control {
+#speed-control,#graph-speed-control {
   /* -webkit-appearance: none; */
   width: 20%;
   height: 10px;
@@ -247,11 +247,11 @@ button[disabled] {
   border-radius: 5px;
 }
 
-#speed-control:hover {
+#speed-control:hover,#graph-speed-control:hover {
   opacity: 1;
 }
 
-#speed-control::-webkit-slider-thumb {
+#speed-control::-webkit-slider-thumb,#graph-speed-control::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
   width: 20px;
@@ -262,7 +262,7 @@ button[disabled] {
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.8);
 }
 
-#speed-control::-moz-range-thumb {
+#speed-control::-moz-range-thumb,#graph-speed-control::-moz-range-thumb{
   width: 20px;
   height: 20px;
   border-radius: 50%;
@@ -272,13 +272,13 @@ button[disabled] {
 }
 
 /* Optional: Adjust styles for when the range input is in different states */
-#speed-control:disabled::-webkit-slider-thumb {
+#speed-control:disabled::-webkit-slider-thumb,#graph-speed-control:disabled::-webkit-slider-thumb {
   background: #ccc;
   cursor: not-allowed;
   box-shadow: none;
 }
 
-#speed-control:disabled::-moz-range-thumb {
+#speed-control:disabled::-moz-range-thumb,#graph-speed-control:disabled::-moz-range-thumb {
   background: #ccc;
   cursor: not-allowed;
   box-shadow: none;
@@ -300,3 +300,87 @@ main {
   border: 2px solid pink;
   border-radius: 10px;
 }
+
+/* Styles for the graph container */
+.graph-container {
+  width: 100%;
+  height: 80%;
+  text-align: center;
+}
+
+/* Styles for the SVG */
+.graph-svg {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+/* Styles for controls */
+.graph-controls {
+  margin-bottom: 10px;
+}
+
+.graph-controls button {
+  padding: 10px 20px;
+  margin: 0 5px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.graph-controls button:hover {
+  background-color: #0056b3;
+}
+
+/* Styles for speed control */
+.graph-speed-control {
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.graph-speed-control label {
+  margin-right: 10px;
+}
+
+.graph-speed-control input {
+  width: 200px;
+}
+
+/* Node styles */
+.graph-node circle {
+  fill: #fff;
+  stroke: steelblue;
+  stroke-width: 2px;
+}
+
+.graph-node text {
+  font: 12px sans-serif;
+}
+
+/* Link styles */
+.graph-link {
+  fill: none;
+  stroke: #ccc;
+  stroke-width: 2px;
+}
+
+/* Visited node style */
+.graph-visited {
+  fill: red !important;
+}
+
+/* Backtracked node style */
+.graph-backtracked {
+  fill: pink !important;
+}
+
+.GraphsVisulizer {
+  background-color: #6c757db8;
+  border: 2px solid pink;
+  border-radius: 10px;
+}
+

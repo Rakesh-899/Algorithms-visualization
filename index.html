@@ -16,19 +16,53 @@
 	<script src="src/algorithms/radixSort.js"></script>
 	<script src="src/algorithms/binarySearch.js"></script>
 	<script src="src/algorithms/linearSearch.js"></script>
-	<script src="src/algorithms/d3.js"></script>
 	<script src="https://d3js.org/d3.v7.min.js"></script>
+	<script src="https://d3js.org/d3.v7.min.js"></script>
+	<script src="src/algorithms/tree.js" defer></script>
+	<script src="src/algorithms/graphs.js" defer></script>
 	<script src="src/dummySort.js"></script>
 	<script src="src/utils.js"></script>
 	<link rel="stylesheet" type="text/css" href="src/style.css" />
 	<link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
 	<link href="https://fonts.googleapis.com/css2?family=Overpass:wght@100&display=swap" rel="stylesheet">
 	<style>
+		#graph-container {
+			position: relative;
+			width: 800px;
+			/* Adjust width as needed */
+			height: 650px;
+			/* Adjust height as needed */
+			text-align: center;
+			/* Center content horizontally */
+		}
 
+		.graph-svg {
+			height: 100%;
+			margin-top: -100px;
+			margin-left: 20px;
+		}
 	</style>
 </head>
 
 <body>
+	<div class="GraphsVisulizer">
+		<h1 id="heading">Graphs visualization</h1>
+		<div id="graph-container" class="graph-container">
+			<div class="dropdown">
+				<button class="dropbtn">Algorithms</button>
+				<div class="dropdown-content">
+					<div class="graph-controls">
+						<button id="run-dfs-btn">Run DFS</button>
+						<button id="run-bfs-btn" style="top: 28px;">Run BFS</button>
+					</div>
+				</div>
+			</div>
+			<!-- <div class="graph-speed-control"> -->
+			<label for="graph-speed-control">Speed:</label>
+			<input type="range" id="graph-speed-control" min="100" max="1900" value="1000">
+			<!-- </div> -->
+		</div>
+	</div>
 	<div class="TreeVisulizer">
 		<h1 id="heading">Tree visualization</h1>
 		<div id="tree-container">
@@ -43,6 +77,7 @@
 			<input type="range" id="speed-control" min="1" max="10" value="3" step="1">
 		</div>
 	</div>
+
 	<div class="sortingVisulizer">
 		<h1 id="heading">Searching &amp; Sorting visualization</h1>
 		<div id="controls" class="controls">
