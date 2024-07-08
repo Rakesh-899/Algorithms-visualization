@@ -2,9 +2,8 @@ document.addEventListener("DOMContentLoaded", function () {
     let width=450;
     const height=650;
 
-    // Check screen width and adjust dimensions for smaller screens
     if (window.matchMedia("(max-width: 750px)").matches) {
-        width=400;  // Adjusted width for smaller screens
+        width=400;
     }
     const treeData={
         name: "Root",
@@ -151,7 +150,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     nodes.append("text")
         .attr("dy", 3)
-        .attr("text-anchor", "middle") // Center the text within the circle
+        .attr("text-anchor", "middle")
         .text(d => d.data.name);
 
     const links=svg.selectAll(".link")
@@ -242,13 +241,13 @@ document.addEventListener("DOMContentLoaded", function () {
         traverse();
     }
 
-    // Event listener for the Run DFS button
+
     document.getElementById("run-dfs").addEventListener("click", function () {
         const speedFactor=document.getElementById("speed-control").value;
         dfs(rootNode, speedFactor);
     });
 
-    // Event listener for the Run BFS button
+
     document.getElementById("run-bfs").addEventListener("click", function () {
         const speedFactor=document.getElementById("speed-control").value;
         bfs(rootNode, speedFactor);

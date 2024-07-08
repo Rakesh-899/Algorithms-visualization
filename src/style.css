@@ -97,37 +97,27 @@ button[disabled] {
   color: #666666;
 }
 
-/* Styles for the tree diagram container */
 #tree-container {
   position: relative;
   width: 800px;
-  /* Adjust width as needed */
   height: 650px;
-  /* Adjust height as needed */
   text-align: center;
-  /* Center content horizontally */
 }
 
-/* Styles for the SVG */
 #tree-container svg {
   display: block;
   margin: 0 auto;
-  /* Center SVG horizontally */
   max-width: 100%;
   max-height: 100%;
   overflow: visible;
-  /* Ensure SVG content is visible beyond container size */
 }
 
 
-/* Styles for the Run DFS button */
 #run-dfs,
 #run-bfs,#run-dfs-btn,#run-bfs-btn {
   position: absolute;
   /* top: -60px; */
-  /* Adjust top position */
   left: 50%;
-  /* Center horizontally */
   transform: translateX(-50%);
   padding: 10px 20px;
   background-color: rgb(154, 236, 111);
@@ -137,24 +127,20 @@ button[disabled] {
   cursor: pointer;
   font-size: 16px;
   z-index: 1;
-  /* Ensure button appears above SVG */
 }
 
-/* Hover effect for the button */
 #run-dfs:hover,
 #run-bfs:hover,#run-dfs-btn:hover,#run-bfs-btn:hover {
   background-color: white;
   color: black;
 }
 
-/* Focus effect for accessibility */
 #run-dfs:focus,
 #run-bfs:focus,#run-dfs-btn:focus,#run-bfs-btn:focus {
   outline: none;
   box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
 }
 
-/* Disabled style for the button */
 #run-dfs:disabled,
 #run-bfs:disabled,#run-dfs-btn:disabled,#run-bfs-btn:disabled {
   background-color: #6c757d;
@@ -166,15 +152,12 @@ button[disabled] {
     display: block;
     flex-direction: row;
     margin: 0 auto;
-    /* Center SVG horizontally */
     max-width: 50%;
     max-height: 100%;
     overflow: visible;
-    /* Ensure SVG content is visible beyond container size */
   }
 }
 
-/* Styles for nodes, links, and visited nodes */
 .node circle {
   fill: #fff;
   stroke: steelblue;
@@ -235,7 +218,6 @@ button[disabled] {
   border-radius: 10px;
 }
 
-/* Styling for the track and thumb of the range input */
 #speed-control,#graph-speed-control {
   /* -webkit-appearance: none; */
   width: 20%;
@@ -271,7 +253,6 @@ button[disabled] {
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.8);
 }
 
-/* Optional: Adjust styles for when the range input is in different states */
 #speed-control:disabled::-webkit-slider-thumb,#graph-speed-control:disabled::-webkit-slider-thumb {
   background: #ccc;
   cursor: not-allowed;
@@ -306,14 +287,12 @@ main {
   border-top-right-radius:0px ;
 }
 
-/* Styles for the graph container */
 .graph-container {
   width: 100%;
   height: 80%;
   text-align: center;
 }
 
-/* Styles for the SVG */
 .graph-svg {
   display: block;
   margin: 0 auto;
@@ -321,7 +300,6 @@ main {
   max-height: 100%;
 }
 
-/* Styles for controls */
 .graph-controls {
   margin-bottom: 10px;
 }
@@ -341,7 +319,6 @@ main {
   background-color: #0056b3;
 }
 
-/* Styles for speed control */
 .graph-speed-control {
   margin-bottom: 20px;
   font-size: 16px;
@@ -355,7 +332,6 @@ main {
   width: 200px;
 }
 
-/* Node styles */
 .graph-node circle {
   fill: #fff;
   stroke: steelblue;
@@ -366,19 +342,16 @@ main {
   font: 12px sans-serif;
 }
 
-/* Link styles */
 .graph-link {
   fill: none;
   stroke: #ccc;
   stroke-width: 2px;
 }
 
-/* Visited node style */
 .graph-visited {
   fill: red !important;
 }
 
-/* Backtracked node style */
 .graph-backtracked {
   fill: pink !important;
 }

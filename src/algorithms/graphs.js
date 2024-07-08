@@ -1,4 +1,4 @@
-// Sample graph data with 30+ nodes
+
 const graphData={
     nodes: [
         {id: 0, label: "0"},
@@ -67,7 +67,7 @@ const graphData={
     ]
 };
 
-// D3.js code for graph visualization
+
 const svg=d3.select("#graph-container").append("svg")
     .attr("class", "graph-svg")
     .attr("width", "100%")
@@ -75,13 +75,13 @@ const svg=d3.select("#graph-container").append("svg")
     .attr("viewBox", [0, 0, 800, 600])
     .attr("preserveAspectRatio", "xMidYMid meet");
 
-// Define simulation
+
 const simulation=d3.forceSimulation(graphData.nodes)
     .force("link", d3.forceLink(graphData.links).id(d => d.id))
     .force("charge", d3.forceManyBody().strength(-100))
     .force("center", d3.forceCenter(400, 300));
 
-// Drag functions for nodes
+
 function drag (simulation) {
     function dragstarted (event) {
         if (!event.active) simulation.alphaTarget(0.3).restart();
@@ -106,7 +106,7 @@ function drag (simulation) {
         .on("end", dragended);
 }
 
-// Create links
+
 const link=svg.selectAll(".graph-link")
     .data(graphData.links)
     .enter().append("line")
@@ -114,7 +114,7 @@ const link=svg.selectAll(".graph-link")
     .style("stroke", "#ccc")
     .style("stroke-width", "2");
 
-// Create nodes
+
 const node=svg.selectAll(".graph-node")
     .data(graphData.nodes)
     .enter().append("g")
@@ -134,7 +134,7 @@ node.append("text")
     .style("font-size", "12px")
     .text(d => d.label);
 
-// Run simulation
+
 simulation.on("tick", () => {
     link.attr("x1", d => d.source.x)
         .attr("y1", d => d.source.y)
@@ -144,7 +144,7 @@ simulation.on("tick", () => {
     node.attr("transform", d => `translate(${d.x},${d.y})`);
 });
 
-// Highlight node function
+
 async function highlightNode (node, isVisited, isBacktracked=false) {
     svg.selectAll(".graph-node")
         .filter(d => d===node)
@@ -155,7 +155,7 @@ async function highlightNode (node, isVisited, isBacktracked=false) {
     return new Promise(resolve => setTimeout(resolve, speed));
 }
 
-// DFS implementation
+
 async function dfs (node, visited=new Set()) {
     await highlightNode(node, true);
 
@@ -169,7 +169,7 @@ async function dfs (node, visited=new Set()) {
     await highlightNode(node, false, visited.has(node));
 }
 
-// BFS implementation
+
 async function bfs (root) {
     const queue=[root];
     const visited=new Set();
@@ -191,18 +191,16 @@ async function bfs (root) {
     }
 }
 
-// Event listener for Run DFS button
 document.getElementById("run-dfs-btn").addEventListener("click", function () {
     dfs(graphData.nodes[0]);
 });
 
-// Event listener for Run BFS button
+
 document.getElementById("run-bfs-btn").addEventListener("click", function () {
     bfs(graphData.nodes[0]);
 });
 
-// Speed control input event listener
 let speed=1000;
 document.getElementById("graph-speed-control").addEventListener("input", function () {
-    speed=2000-parseInt(this.value); // Reverse the speed logic
+    speed=2000-parseInt(this.value);
 });
